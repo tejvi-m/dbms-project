@@ -21,12 +21,36 @@
     padding-left:400px;
   }
 
+  .topbar{
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 50px;
+    background-color: #ffffff;
+  }
+
+  .content{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #d6d7d8;
+    padding-top: 100px;
+  }
+
   </style>
 </head>
 <body>
+  <div class = "topbar">
+    <img src = "./logo.png" height = "50px" alt="logo"/>
 
-  <div class = "s"><a href = "./student1.php">student</a></div>
-  <div class = "s"><a href = "./teacher.html">lecturer</a></div>
+  </div>
 
+  <div class = "content">
+    <div class = "DescBar"> PROJECT REGISTRATION PORTAL </div>
+
+      <div class = "Member"><a href = "./student1.php">student</a></div>
+      <div class = "Member"><a href = "./teacher.html">lecturer</a></div>
+      <div class = "Member"><a href = "./coordinator.html">Coordinator</a></div>
+  </div>
 </body>
 </html>
