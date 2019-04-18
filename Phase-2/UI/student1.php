@@ -86,8 +86,8 @@
       <input type ="radio" name = "size" id="size3" value="3"/>3</br>
 
       Project type:
-      <input type ="radio" name = "ptype" id="MajorP" value="2"/>Major
-      <input type ="radio" name = "ptype" id="MinorP" value="3"/>Minor</br>
+      <input type ="radio" name = "ptype" id="MajorP" value="Major"/>Major
+      <input type ="radio" name = "ptype" id="MinorP" value="Minor"/>Minor</br>
       Project Title: <input type = "text" name = "Ptitle"/></br></br>
       Domain: <input type = "text" name = "Domain"/></br></br>
       Guide: <select name="guide">
