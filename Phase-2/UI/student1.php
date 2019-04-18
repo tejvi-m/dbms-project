@@ -83,16 +83,19 @@
       <div class = cPanels>
       Select team size:
       <input type ="radio" name = "size" id="size2" value="2"/>2
-
       <input type ="radio" name = "size" id="size3" value="3"/>3</br>
+
+      Project type:
+      <input type ="radio" name = "ptype" id="MajorP" value="2"/>Major
+      <input type ="radio" name = "ptype" id="MinorP" value="3"/>Minor</br>
       Project Title: <input type = "text" name = "Ptitle"/></br></br>
       Domain: <input type = "text" name = "Domain"/></br></br>
       Guide: <select name="guide">
 
         <?php
 
-        $user = "";
-        $pswd = "";
+        $user = "tejvi";
+        $pswd = "tejvi";
         $db_connection = pg_connect("host=localhost dbname=register user=".$user." password=".$pswd);
         $result = pg_query($db_connection, "SELECT * FROM teacher;");
         echo pg_last_error($dbconn);
@@ -111,15 +114,18 @@
       var el1 = document.getElementById("fortext");
       var newEL = document.createElement("p");
 
+      var el2 = document.getElementById("MinorP");
+      var el3 = document.getElementById("MajorP");
+
       function addText(x){
         newEL.innerHTML = "";
         for(var i = 1; i <= x; i++){
           newEL.innerHTML += "<div class = student>";
           newEL.innerHTML += "Teammate " + i + " details</br>";
-          newEL.innerHTML += "Name: <input type =\"text\" name=\"name" + i + "\"\>";
+          newEL.innerHTML += "Name: <input type =\"text\" name=\"name" + i + "\"/>";
           newEL.innerHTML += "</br>SRN: <input type=\"text\" name = \"SRN" + i + "\"/></br>";
           newEL.innerHTML += "CGPA: <input type=\"text\" name = \"CGPA" + i + "\"/></br>";
-          newEL.innerHTML += "</div>";
+          newEL.innerHTML += "<p id=\"internship"+i+"\"></p></div>";
         }
 
         el1.appendChild(newEL);
@@ -136,11 +142,38 @@
         addText(3);
       };
 
+      function removeInternship(e){
+        var size = 2;
+        var ell = document.getElementById("internship3");
+        if (ell !== null){
+          size = 3;
+        }
+
+        for (var i = 1; i <= size; i++){
+          var ell = document.getElementById("internship"+i);
+          ell.innerHTML ="";
+        }
+      }
+      function addInternship(e){
+        var size = 2;
+        var ell = document.getElementById("internship3");
+        if (ell !== null){
+          size = 3;
+        }
+
+        for (var i = 1; i <= size; i++){
+          var ell = document.getElementById("internship"+i);
+          ell.innerHTML ="Internship Company: <input type=\"text\" name = \"internship" + i +"\" />";
+        }
+      }
+
       var element1 = document.getElementById("size2");
       element1.addEventListener("click", make2);
       var element2 = document.getElementById("size3");
       element2.addEventListener("click", make3);
 
+      el2.addEventListener("click", addInternship);
+      el3.addEventListener("click", removeInternship);
       </script>
 
 </div>
