@@ -5,28 +5,59 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title><style type="text/css">
-  a{
-    text-decoration: none;
-    color: black;
+
+  .topbar{
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 10%;
+    background-color: #ffffff;
   }
-  div.s{
-    position:relative;
-    top:50px;
-    height:50px;
-    color:;
-    width:100%;
-    textalign:centre;
-    font-size:30px;
-    padding:17px;
-    padding-left:400px;
+  body{
+    background-color: grey;
+    z-index: -1;
+  }
+
+  .content{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding-top: 100px;
+  }
+
+  .Member{
+    position: relative;
+    width: 25%;
+    height: 10%;
+    margin-left: 400px;
+    margin-top: 100px;
+    text-align: center;
+    padding:20px;
+    border: 1px solid blue;
+    color:#ffffff;
+    text-decoration: none;
+
+  }
+
+  .Member:hover{
+    border: 1px solid white;
+    color: solid blue;
   }
 
   </style>
 </head>
 <body>
+  <div class = "topbar">
+    <img src = "./logo.png" height = "50px" alt="logo"/>
 
-  <div class = "s"><a href = "./student1.php">student</a></div>
-  <div class = "s"><a href = "./teacher.html">lecturer</a></div>
+  </div>
 
+  <div class = "content">
+    <div class = "DescBar"> PROJECT REGISTRATION PORTAL </div>
+
+      <div class = "Member"><a href = "./student1.php" style="text-decoration:none;">Student</a></div>
+      <div class = "Member"><a href = "./teacher.html">Lecturer</a></div>
+      <div class = "Member"><a href = "./coordinator.html">Coordinator</a></div>
+  </div>
 </body>
 </html>
