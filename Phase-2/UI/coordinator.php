@@ -21,8 +21,8 @@
  
  if(isset($_POST['submit'])){
     echo "<script> var b = document.getElementById(\"bod\") ;b.innerHTML=\"\";</script>";
-    $user = "postgres";
-    $pswd = "alike#1";
+    $user = "tejvi";
+    $pswd = "tejvi";
     $db_connection = pg_connect("host=localhost dbname=register user=".$user." password=".$pswd);
    $uname = $_POST['username'];
    
