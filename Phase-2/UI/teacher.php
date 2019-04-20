@@ -6,9 +6,8 @@
   </head>
   <body>
     <?php
-
-    $user = "postgres";
-    $pswd = "alike#1";
+    $user = "tejvi";
+    $pswd = "tejvi";
 
     $db_connection = pg_connect("host=localhost dbname=register user=".$user." password=".$pswd);
 
@@ -37,6 +36,7 @@
      header("Location: ./teacher0.php?tid=".$_GET['tid']);
 
     ?>
+
 
   </body>
 </html>
