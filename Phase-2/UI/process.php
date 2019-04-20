@@ -20,8 +20,8 @@
   </head>
   <body>
   <?php
-    $user = "tejvi";
-    $pswd = "tejvi";
+    $user = "";
+    $pswd = "";
     $db_connection = pg_connect("host=localhost dbname=register user=".$user." password=".$pswd);
 
     $name1 = explode(" ", $_POST['name1']);

@@ -73,7 +73,7 @@
 </head>
 <body>
   <div class = "s">
-  Teams</br>
+  Teams balkd</br>
   </div>
   </br>
   <div class = "s">
@@ -82,12 +82,12 @@
   <div class = "cPanels">
   Form Panels:
 
-  <form action ="process.php" method = "post">
+  <form action ="teacher.php" method = "post">
     Select panel size (number of copanelists):
     <input type ="radio" name = "size" id="size2" value="2"/>2
 
     <input type ="radio" name = "size" id="size3" value="3"/>3</br>
-    Team ID: <input type = "text" name = "Ptitle"/></br>
+    Team ID: <input type = "text" name = "teamid"/></br>
 
 
     <div id="fortext"></div>
@@ -102,7 +102,7 @@
         newEL.innerHTML += "<div class = student>";
         newEL.innerHTML += "Copanelist " + i + " details</br>";
         newEL.innerHTML += "Name: <input type =\"text\" name=\"name" + i + "\"\>";
-        newEL.innerHTML += "</br>ID: <input type=\"text\" name = \"SRN" + i + "\"/></br>";
+        newEL.innerHTML += "</br>ID: <input type=\"text\" name = \"tid" + i + "\"/></br>";
         newEL.innerHTML += "</div>";
       }
 
