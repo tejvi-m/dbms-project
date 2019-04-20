@@ -79,7 +79,7 @@
     </style>
   </head>
   <body>
-    <form action ="process.php" method = "post">
+    <form action ="process.php?ssn=<?php echo $_GET['ssn']?>" method = "post">
       <div class = cPanels>
       Select team size:
       <input type ="radio" name = "size" id="size2" value="2"/>2
@@ -97,6 +97,7 @@
         $user = "tejvi";
         $pswd = "tejvi";
         $db_connection = pg_connect("host=localhost dbname=register user=".$user." password=".$pswd);
+
         $result = pg_query($db_connection, "SELECT * FROM teacher;");
         echo pg_last_error($dbconn);
         echo $result;
