@@ -6,7 +6,8 @@
   </head>
   <body>
     <form action="loginprocess.php" method = "POST">
-      ID: <input type="text" name = "username"/>
+
+      Id: <input type="text" name = "username"/>
       <br>
       Password: <input type="password" name = "password"/>
       <br>

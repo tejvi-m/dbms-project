@@ -6,7 +6,6 @@
   </head>
   <body>
     <?php
-
     $user = "tejvi";
     $pswd = "tejvi";
 
@@ -37,6 +36,7 @@
      header("Location: ./teacher0.php?tid=".$_GET['tid']);
 
     ?>
+
 
   </body>
 </html>
