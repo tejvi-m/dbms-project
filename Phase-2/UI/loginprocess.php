@@ -23,20 +23,20 @@
       header ("Location: teacher0.php?tid=".$_POST['username']);
 
     }
-
-    $query = pg_query($db_connection, "SELECT * FROM student where ssn='".$_POST['username']."';");
-    $sz =strlen(pg_fetch_row($query)[0]);
-    echo $sz;
-
-    if ($sz != 0){
-      echo "letting you into teacher";
-      header ("Location: viewPanels.php?ssn=".$_POST['username']);
-
-    }
     else{
-      header("Location: student1.php?ssn=".$_POST['username']);
-    }
+      $query = pg_query($db_connection, "SELECT * FROM student where ssn='".$_POST['username']."';");
+      $sz =strlen(pg_fetch_row($query)[0]);
+      echo $sz;
 
+      if ($sz != 0){
+        echo "letting you into teacher";
+        header ("Location: viewPanels.php?ssn=".$_POST['username']);
+
+      }
+      else{
+        header("Location: student1.php?ssn=".$_POST['username']);
+      }
+    }
      ?>
      hello
 
