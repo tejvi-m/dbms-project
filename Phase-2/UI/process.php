@@ -77,10 +77,12 @@
      //guide returns teacher id
      $result = pg_query($db_connection, "INSERT INTO works_on VALUES('".$teamID."', '".$_POST['guide']."', '".$ptitle."');");
 
-     //autocommit doesnt seem to work, so committing the changes to the db automatically.
+     
+     //autocommit doesnt seem to work, so committing the changes to the db explicitly
      $result = pg_query($db_connection, "COMMIT;");
      ?>
 
-     
+
+
   </body>
 </html>
