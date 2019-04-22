@@ -182,8 +182,8 @@ th, td {
  if(isset($_POST['submit'])){
      echo '<p class="con">';
     echo "<script> var b = document.getElementById(\"bod\") ;b.innerHTML=\"\";</script>";
-    $user = "tejvi";
-    $pswd = "tejvi";
+    $user = "coordinator";
+    $pswd = "coordinator";
     $db_connection = pg_connect("host=localhost dbname=register user=".$user." password=".$pswd);
    $uname = $_POST['username'];
 

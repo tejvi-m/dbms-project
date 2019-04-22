@@ -3,12 +3,14 @@ create database register;
 
 \c register
 
-drop table Student;
+drop table part_of;
+drop table WORKS_ON;
+drop table PANEL;
 drop table Team;
 drop table PROJECT;
+drop table internship;
+drop table Student;
 drop table TEACHER;
-drop table PANEL;
-drop table WORKS_ON;
 
 
 
@@ -73,14 +75,15 @@ CREATE TABLE PART_OF
     FOREIGN KEY (PanelID) REFERENCES Panel(ID),
     FOREIGN KEY (TeacherID) REFERENCES TEACHER(TID));
 
-CREATE USER student with password "student";
-CREATE USER teacher with password "teacher";
-CREATE USER coordinator with password "coordinator";
+create user student with encrypted password "student";
+create user teacher with encrypted password "teacher";
+create user coordinator with encrypted password "coordinator";
 
-GRANT SELECT on * to student;
-GRANT SELECT ON * TO TEACHER;
-GRANT SELECT ON * TO COORDINATOR;
-
-GRANT INSERT ON PANEL, TEAM, STUDENT, WORKS_ON, INTERNSHIP TO student;
-GRANT INSERT ON PANEL, PART_OF TO teacher;
-GRANT INSERT ON * TO coordinator;
+grant update on all tables in schema public to coordinator;
+grant update on panel to teacher;
+grant select on all tables in schema public to teacher;
+grant select on all tables in schema public to coordinator;
+grant select on all tables in schema public to student;
+grant insert on panel, works_on, project, team, student, internship to student;
+grant insert on panel, part_of to teacher;
+grant insert on all tables in schema public to coordinator;

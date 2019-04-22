@@ -197,7 +197,7 @@ input[type=submit] {
     <form action ="process.php?ssn=<?php echo $_GET['ssn']?>" method = "post">
     <p>Select Team Size: </p>
     <label class="container">2
-      <input type="radio" checked="checked" name="size" value="2" id = "size2">
+      <input type="radio"  name="size" value="2" id = "size2">
        <span class="checkmark"></span>
     </label>
     <label class="container">3
@@ -207,7 +207,7 @@ input[type=submit] {
 <br/>
      <p> Project type: </p>
      <label class="container">Major
-      <input type="radio" checked="checked" name = "ptype" id="MajorP" value="Major">
+      <input type="radio" name = "ptype" checked="checked" id="MajorP" value="Major">
        <span class="checkmark"></span>
     </label>
     <label class="container">Minor

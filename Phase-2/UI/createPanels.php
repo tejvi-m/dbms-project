@@ -172,7 +172,7 @@
     <form action ="<?php echo "./teacher.php?tid=".$_GET['tid']."&panelid=".$_GET['panelid']?>" method = "post">
          <p>Select Panel Size (Number Of Copanelists):</p>
          <label class="container">2
-         <input type="radio" checked="checked" name="size" id="size2" value="2">
+         <input type="radio" name="size" id="size2" value="2">
           <span class="checkmark"></span>
        </label>
        <label class="container">3
@@ -220,15 +220,24 @@
 
   <div class = "reference">
     <?php
+
     $user = "teacher";
     $pswd = "teacher";
     $db_connection = pg_connect("host=localhost dbname=register user=".$user." password=".$pswd);
-
     $result = pg_query($db_connection, "SELECT * FROM teacher;");
-
+    echo "<table border='1'>
+    <caption>List Of Teachers</caption>
+    <tr>
+    <th>Id</th>
+    <th>Name</th>
+    </tr>";
     while ($row = pg_fetch_row($result)) {
-      echo "ID:$row[1], Name:$row[0]<br>";
+      echo "<tr>";
+      echo "<td>" . $row[1] . "</td>";
+      echo "<td>" . $row[0] . "</td>";
+      echo "</tr>";
       }
+      echo "</table>";
 
      ?>
   </div>
