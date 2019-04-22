@@ -6,19 +6,13 @@
   </head>
   <body>
     <?php
-    $user = "teacher";
-    $pswd = "teacher";
-
+    $user = "postgres";
+    $pswd = "Fries123";
     $db_connection = pg_connect("host=localhost dbname=register user=".$user." password=".$pswd);
-
     $panel_size = intval($_POST['size']) + 1;
-
-
     $query = "UPDATE panel SET Size=".$panel_size." where ID='".$_GET['panelid']."';";
     print($query);
-
     $result = pg_query($db_connection, $query);
-
     $query1 = "INSERT INTO part_of VALUES('".$_GET['panelid']."', '".$_POST['tid1']."', NULL);";
     $result = pg_query($db_connection, $query1);
     echo $query1;
@@ -30,13 +24,9 @@
         $result = pg_query($db_connection, $query3);
         echo $query3;
     }
-
     $query = pg_query($db_connection, "COMMIT;");
-
      header("Location: ./teacher0.php?tid=".$_GET['tid']);
-
     ?>
-
 
   </body>
 </html>
