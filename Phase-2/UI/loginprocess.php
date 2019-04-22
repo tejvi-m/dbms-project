@@ -7,8 +7,8 @@
   <body>
     <?php
     echo "hello";
-    $user = "postgres";
-    $pswd = "Fries123";
+    $user = "tejvi";
+    $pswd = "tejvi";
     $db_connection = pg_connect("host=localhost dbname=register user=".$user." password=".$pswd);
     echo $_POST['username'];
     $query = pg_query($db_connection, "SELECT * FROM teacher where tid='".$_POST['username']."';");

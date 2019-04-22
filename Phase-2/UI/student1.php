@@ -7,7 +7,7 @@
 body{
     background-color: rgb(235, 235, 235);
     z-index: -1;
-} 
+}
   .topbar{
     position: absolute;
     z-index: 1;
@@ -17,14 +17,14 @@ body{
     width: 100%;
     height: 12%;
     background-color: white;
-  } 
+  }
 
   .DescBar{
     position: absolute;
     font-size: 22px;
     color: rgb(0, 153, 255);
     background-color: white;
-    width: 97.5%; 
+    width: 97.5%;
     text-align: center;
     padding: 1.3%;
     margin-left: -1%;
@@ -38,7 +38,7 @@ body{
     margin-top: 14%;
     margin-left: 5%;
   }
-    
+
     .container {
   display: block;
   position: relative;
@@ -101,7 +101,7 @@ body{
 	border-radius: 50%;
 	background: white;
 }
-  /* 
+  /*
   div.s{
       position:relative;
       top:50px;
@@ -124,7 +124,7 @@ body{
         padding:10px;
         line-height: 1.6;
     }
-    
+
 .advancedSearchTextbox {
     width: 526px;
     margin-right: -4px;
@@ -150,7 +150,7 @@ body{
   p {
   font-size: 20px;
   color: darkblue;
-  
+
 }
 
 input[type=text] {
@@ -170,16 +170,16 @@ select{
 }
 
 input[type=submit] {
-  
+
   padding: 20px 80px;
   margin-top: 3%;
-  
+
   box-sizing: border-box;
   border: none;
   background-color: darkblue;
 
   color: white;
-} 
+}
     </style>
   </head>
 
@@ -189,25 +189,25 @@ input[type=submit] {
   <body>
   <div class="topbar">
      <img src="/logo.png" alt="logo" height="80px"/>
-  </div> 
+  </div>
   <div class="DescBar">
-     TEAM FORMATION 
+     TEAM FORMATION
   </div>
 
     <form action ="process.php?ssn=<?php echo $_GET['ssn']?>" method = "post">
     <p>Select Team Size: </p>
     <label class="container">2
-      <input type="radio" checked="checked" name="size" value="size2">  
+      <input type="radio" checked="checked" name="size" value="size2" id = "size2">
        <span class="checkmark"></span>
     </label>
     <label class="container">3
-      <input type="radio" name="size" value="size3" >
+      <input type="radio" name="size" value="size3" id = "size3">
       <span class="checkmark"></span>
     </label>
 <br/>
      <p> Project type: </p>
      <label class="container">Major
-      <input type="radio" checked="checked" name = "ptype" id="MajorP" value="Major">  
+      <input type="radio" checked="checked" name = "ptype" id="MajorP" value="Major">
        <span class="checkmark"></span>
     </label>
     <label class="container">Minor
@@ -220,11 +220,11 @@ input[type=submit] {
       <input type = "text" name = "Domain" placeholder="Domain"/><br/><br/>
       <p> Guide: </p>
        <select name="guide">
-       
+
 
         <?php
-        $user = "postgres";
-        $pswd = "Fries123";
+        $user = "tejvi";
+        $pswd = "tejvi";
         $db_connection = pg_connect("host=localhost dbname=register user=".$user." password=".$pswd);
         $result = pg_query($db_connection, "SELECT * FROM teacher;");
         echo pg_last_error($dbconn);
@@ -238,7 +238,7 @@ input[type=submit] {
       </select>
       <br/><br/><br/>
       <div id="fortext"></div>
-    
+
       <input type="submit" id = "Save" name="submit" value="Save" />
       <script>
       var el1 = document.getElementById("fortext");

@@ -19,8 +19,8 @@
   </head>
   <body>
   <?php
-    $user = "postgres";
-    $pswd = "Fries123";
+    $user = "tejvi";
+    $pswd = "tejvi";
     $db_connection = pg_connect("host=localhost dbname=register user=".$user." password=".$pswd);
     $name1 = explode(" ", $_POST['name1']);
     $name2 = explode(" ", $_POST['name2']);
@@ -68,6 +68,6 @@
      $result = pg_query($db_connection, "COMMIT;");
      ?>
 
-     
+
   </body>
 </html>

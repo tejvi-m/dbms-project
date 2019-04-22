@@ -165,9 +165,9 @@
 
     <form action ="<?php echo "./teacher.php?tid=".$_GET['tid']."&panelid=".$_GET['panelid']?>" method = "post">
       Select panel size (number of copanelists):
-      <input type ="radio" name = "size" id="size2" value="2"/>2
+      <input type ="radio" name = "size" id="size2" id = "2" value="2"/>2
 
-      <input type ="radio" name = "size" id="size3" value="3"/>3</br>
+      <input type ="radio" name = "size" id="size3" id = "3"value="3"/>3</br>
 
       <div id="fortext"></div>
       <input type="submit" name="submit" id="save" value="save" />
@@ -218,8 +218,6 @@
     while ($row = pg_fetch_row($result)) {
       echo "ID:$row[1], Name:$row[0]<br>";
       }
-
-      //create panels, you're not inserting?
 
      ?>
   </div>

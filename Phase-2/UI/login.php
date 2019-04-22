@@ -14,27 +14,27 @@
     height: auto;
     opacity: 0.4;
 }
- 
 
-  
+
+
 
 .topbar{
     position: fixed;
     z-index: 1;
     margin-top: -1%;
     margin-left: -1%;
-  
+
     height: 1%;
   }
 
 .DescBar{
     font-size: 45px;
     color: rgb(0, 153, 255);
-    
+
     width: 100%;
       padding-top: 11%;
     margin-left: 10%;
-    
+
     z-index: 2;
     font-weight: 600;
   }
@@ -63,17 +63,17 @@ input[type=submit] {
 
     </style>
   </head>
-  
+
   <body>
   <div class="container">
      <img src="/pes.jpg" alt="logo"/>
-  </div> 
+  </div>
 
   <div class="topbar">
      <img src="/logo.png" alt="logo" height="100px"/>
-  </div> 
+  </div>
   <div class="DescBar">
-     LOGIN 
+     LOGIN
 
   </div>
     <form action="loginprocess.php" method = "POST">
@@ -84,6 +84,6 @@ input[type=submit] {
       <input type="submit" value ="Login"/>
     </form>
 
-    
+
       </body>
 </html>
