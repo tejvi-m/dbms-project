@@ -66,11 +66,11 @@ input[type=submit] {
 
   <body>
   <div class="container">
-     <img src="/pes.jpg" alt="logo"/>
+     <img src="pes.jpg" alt="logo"/>
   </div>
 
   <div class="topbar">
-     <img src="/logo.png" alt="logo" height="100px"/>
+     <img src="logo.png" alt="logo" height="100px"/>
   </div>
   <div class="DescBar">
      LOGIN

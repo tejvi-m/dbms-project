@@ -19,8 +19,8 @@
   </head>
   <body>
   <?php
-    $user = "tejvi";
-    $pswd = "tejvi";
+    $user = "student";
+    $pswd = "student";
     $db_connection = pg_connect("host=localhost dbname=register user=".$user." password=".$pswd);
     $name1 = explode(" ", $_POST['name1']);
     $name2 = explode(" ", $_POST['name2']);
@@ -39,19 +39,31 @@
     $dom = $_POST['Domain'];
     $size = $_POST['size'];
     //right now the only person in the panel is the guide
+    $result = pg_query($db_connection, "LOCK table panel;");
+    echo "INSERT INTO panel VALUES('".$panelID."', 1);";
     $result = pg_query($db_connection, "INSERT INTO panel VALUES('".$panelID."', 1);");
     //adding to project and team tables with the unique id's generated
+
+    $result = pg_query($db_connection, "LOCK table project;");
     $result = pg_query($db_connection, "INSERT INTO project VALUES('".$ptitle."', '".$dom."', '".$_POST['ptype']."');");
+    echo "INSERT INTO project VALUES('".$ptitle."', '".$dom."', '".$_POST['ptype']."');";
+    $result = pg_query($db_connection, "LOCK table team;");
     $result = pg_query($db_connection, "INSERT INTO team VALUES('".$teamID."', ".$_POST['size'].", '".$panelID."');");
-     //inserting student details
+    echo "INSERT INTO team VALUES('".$teamID."', ".$_POST['size'].", '".$panelID."');";
+    //  //inserting student details
+    $result = pg_query($db_connection, "LOCK table student;");
      $result = pg_query($db_connection, "INSERT INTO Student VALUES('".$name1[0]."', '".$name1[1]."', '".$name1[2]."','".$_POST['SRN1']."',  ".$_POST['CGPA1'].", '".$teamID."');");
+     echo "INSERT INTO Student VALUES('".$name1[0]."', '".$name1[1]."', '".$name1[2]."','".$_POST['SRN1']."',  ".$_POST['CGPA1'].", '".$teamID."');";
+
      $result = pg_query($db_connection, "INSERT INTO Student VALUES('".$name2[0]."', '".$name2[1]."', '".$name2[2]."','".$_POST['SRN2']."',  ".$_POST['CGPA2'].", '".$teamID."');");
+     echo "INSERT INTO Student VALUES('".$name2[0]."', '".$name2[1]."', '".$name2[2]."','".$_POST['SRN2']."',  ".$_POST['CGPA2'].", '".$teamID."');";
      if($_POST['size'] == 3){
        $name3 = explode(" ", $_POST['name3']);
       // echo "INSERT INTO Student VALUES('".$name3[0]."', '".$name3[1]."', '".$name3[2]."', '".$_POST['SRN3']."', ".$_POST['CGPA3'].", '".$teamID."');";
        $result = pg_query($db_connection, "INSERT INTO Student VALUES( '".$name3[0]."', '".$name3[1]."', '".$name3[2]."', '".$_POST['SRN3']."', ".$_POST['CGPA3'].", '".$teamID."');");
      }
-    //insert internship details if necessary
+     $result = pg_query($db_connection, "LOCK table internship;");
+    // //insert internship details if necessary
     if ($_POST['ptype'] == "Minor"){
        //insert for each student
       // echo "INSERT INTO internship VALUES('".$_POST['SRN1']."', '".$_POST['internship1']."');";       $result = pg_query($db_connection, "INSERT INTO internship VALUES('".$_POST['SRN1']."', '".$_POST['internship1']."');");
@@ -63,9 +75,12 @@
      }
      //add to works on table - team, teacher, Ptitle
      //guide returns teacher id
+     $result = pg_query($db_connection, "LOCK table works_on;");
      $result = pg_query($db_connection, "INSERT INTO works_on VALUES('".$teamID."', '".$_POST['guide']."', '".$ptitle."');");
      //autocommit doesnt seem to work, so committing the changes to the db automatically.
      $result = pg_query($db_connection, "COMMIT;");
+
+     header ("Location: viewPanels.php?ssn=".$_GET['ssn']);
      ?>
 
 

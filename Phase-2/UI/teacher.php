@@ -10,9 +10,11 @@
     $pswd = "teacher";
     $db_connection = pg_connect("host=localhost dbname=register user=".$user." password=".$pswd);
     $panel_size = intval($_POST['size']) + 1;
+    $result = pg_query($db_connection, "LOCK TABLE panel;");
     $query = "UPDATE panel SET Size=".$panel_size." where ID='".$_GET['panelid']."';";
     print($query);
     $result = pg_query($db_connection, $query);
+    $result = pg_query($db_connection, "LOCK TABLE part_of;");
     $query1 = "INSERT INTO part_of VALUES('".$_GET['panelid']."', '".$_POST['tid1']."', NULL);";
     $result = pg_query($db_connection, $query1);
     echo $query1;
@@ -27,7 +29,7 @@
     $query = pg_query($db_connection, "COMMIT;");
 
     echo "added";
-     //header("Location: ./teacher0.php?tid=".$_GET['tid']);
+    header("Location: ./teacher0.php?tid=".$_GET['tid']);
 
     ?>
 

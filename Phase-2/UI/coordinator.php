@@ -149,7 +149,7 @@ th, td {
   </head>
   <body id = "bod">
   <div class="topbar">
-     <img src="/logo.png" alt="logo" height="80px"/>
+     <img src="logo.png" alt="logo" height="80px"/>
   </div>
   <div class="DescBar">
      CO-ORDINATOR

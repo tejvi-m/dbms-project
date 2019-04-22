@@ -188,7 +188,7 @@ input[type=submit] {
 
   <body>
   <div class="topbar">
-     <img src="/logo.png" alt="logo" height="80px"/>
+     <img src="logo.png" alt="logo" height="80px"/>
   </div>
   <div class="DescBar">
      TEAM FORMATION
@@ -197,11 +197,11 @@ input[type=submit] {
     <form action ="process.php?ssn=<?php echo $_GET['ssn']?>" method = "post">
     <p>Select Team Size: </p>
     <label class="container">2
-      <input type="radio" checked="checked" name="size" value="size2" id = "size2">
+      <input type="radio" checked="checked" name="size" value="2" id = "size2">
        <span class="checkmark"></span>
     </label>
     <label class="container">3
-      <input type="radio" name="size" value="size3" id = "size3">
+      <input type="radio" name="size" value="3" id = "size3">
       <span class="checkmark"></span>
     </label>
 <br/>

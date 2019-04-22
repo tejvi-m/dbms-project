@@ -159,15 +159,26 @@
     </style>
   </head>
   <body>
+    <div class="topbar">
+     <img src="logo.png" alt="logo" height="80px"/>
+  </div>
+  <div class="DescBar">
+     PANEL FORMATION
+  </div>
+
 
     <div class = "cPanels">
-    Form Panels:
 
     <form action ="<?php echo "./teacher.php?tid=".$_GET['tid']."&panelid=".$_GET['panelid']?>" method = "post">
-      Select panel size (number of copanelists):
-      <input type ="radio" name = "size" id="size2" id = "2" value="2"/>2
-
-      <input type ="radio" name = "size" id="size3" id = "3"value="3"/>3</br>
+         <p>Select Panel Size (Number Of Copanelists):</p>
+         <label class="container">2
+         <input type="radio" checked="checked" name="size" id="size2" value="2">
+          <span class="checkmark"></span>
+       </label>
+       <label class="container">3
+         <input type="radio" name="size" id="size3" value="3">
+         <span class="checkmark"></span>
+       </label>
 
       <div id="fortext"></div>
       <input type="submit" name="submit" id="save" value="save" />
