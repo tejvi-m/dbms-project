@@ -6,8 +6,8 @@
   </head>
   <body>
     <?php
-    $user = "tejvi";
-    $pswd = "tejvi";
+    $user = "teacher";
+    $pswd = "teacher";
 
     $db_connection = pg_connect("host=localhost dbname=register user=".$user." password=".$pswd);
 

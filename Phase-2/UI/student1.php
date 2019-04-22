@@ -94,8 +94,8 @@
 
         <?php
 
-        $user = "tejvi";
-        $pswd = "tejvi";
+        $user = "student";
+        $pswd = "student";
         $db_connection = pg_connect("host=localhost dbname=register user=".$user." password=".$pswd);
 
         $result = pg_query($db_connection, "SELECT * FROM teacher;");

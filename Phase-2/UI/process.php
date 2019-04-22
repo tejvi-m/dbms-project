@@ -20,8 +20,8 @@
   </head>
   <body>
   <?php
-    $user = "";
-    $pswd = "";
+    $user = "student";
+    $pswd = "student";
     $db_connection = pg_connect("host=localhost dbname=register user=".$user." password=".$pswd);
 
     $name1 = explode(" ", $_POST['name1']);
@@ -77,7 +77,7 @@
      //guide returns teacher id
      $result = pg_query($db_connection, "INSERT INTO works_on VALUES('".$teamID."', '".$_POST['guide']."', '".$ptitle."');");
 
-     
+
      //autocommit doesnt seem to work, so committing the changes to the db explicitly
      $result = pg_query($db_connection, "COMMIT;");
      ?>

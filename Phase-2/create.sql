@@ -72,3 +72,15 @@ CREATE TABLE PART_OF
 	PRIMARY KEY (PanelID, TeacherID),
     FOREIGN KEY (PanelID) REFERENCES Panel(ID),
     FOREIGN KEY (TeacherID) REFERENCES TEACHER(TID));
+
+CREATE USER student with password "student";
+CREATE USER teacher with password "teacher";
+CREATE USER coordinator with password "coordinator";
+
+GRANT SELECT on * to student;
+GRANT SELECT ON * TO TEACHER;
+GRANT SELECT ON * TO COORDINATOR;
+
+GRANT INSERT ON PANEL, TEAM, STUDENT, WORKS_ON, INTERNSHIP TO student;
+GRANT INSERT ON PANEL, PART_OF TO teacher;
+GRANT INSERT ON * TO coordinator;

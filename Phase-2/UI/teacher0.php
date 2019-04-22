@@ -80,8 +80,8 @@
 <body>
   <div class = "Teams">
     <?php
-    $user = "tejvi";
-    $pswd = "tejvi";
+    $user = "teacher";
+    $pswd = "teacher";
     $db_connection = pg_connect("host=localhost dbname=register user=".$user." password=".$pswd);
 
     $query = pg_query($db_connection, "SELECT * FROM works_on where teacherid='".$_GET['tid']."';");
