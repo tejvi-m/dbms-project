@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <style type = "text/css">
+  /*
     div.s{
       position:relative;
       top:50px;
@@ -28,9 +29,7 @@
       padding:37px;
       padding-left:50;
     }
-
     .student{
-
         position:relative;
         top:10px;
         height:30px;
@@ -41,7 +40,6 @@
         padding:10px;
         line-height: 1.6;
     }
-
     input[type=text] {
     padding: 0;
     height: 30px;
@@ -57,9 +55,7 @@
     width: 526px;
     margin-right: -4px;
 }
-
     #save{
-
     background-color: #067c74;
     border: none;
     color: white;
@@ -68,11 +64,66 @@
     margin: 4px 2px;
     cursor: pointer;
   }
-
   .Panels{
     position: absolute;
     right: 50px;
     top:100px;
+  }
+
+*/
+
+  body{
+    background-color: rgb(235, 235, 235);
+    z-index: -1;
+}
+  .topbar{
+    position: absolute;
+    z-index: 1;
+    margin-top: -1.5%;
+    margin-left: -1%;
+    margin-bottom: 3%;
+    width: 100%;
+    height: 12%;
+    background-color: white;
+  }
+
+  .DescBar{
+    position: absolute;
+    font-size: 22px;
+    color: rgb(0, 153, 255);
+    background-color: white;
+    width: 97.5%;
+    text-align: center;
+    padding: 1.3%;
+    margin-left: -1%;
+    margin-top: 6%;
+    border: 1px lightgrey solid;
+    font-weight: 600;
+  }
+  .Teams{
+    position: absolute;
+    margin-top: 14%;
+    margin-left:40%;
+    text-align:center;
+  }
+
+  .Panels{
+    position: absolute;
+    margin-top: 25%;
+    margin-left:40%;
+    text-align:center;
+
+  }
+
+  p {
+    font-size: 22px;
+    color: darkblue;
+    font-style: bold;
+  }
+
+  .team,.Panels{
+    font-size: 18px;
+    color: rgb(0, 153, 255);
   }
 
   </style>
@@ -80,8 +131,8 @@
 <body>
   <div class = "link to coordinator">
     <?php
-    $user = "teacher";
-    $pswd = "teacher";
+    $user = "tejvi";
+    $pswd = "tejvi";
     $db_connection = pg_connect("host=localhost dbname=register user=".$user." password=".$pswd);
 
 
