@@ -194,7 +194,7 @@ input[type=submit] {
      TEAM FORMATION
   </div>
 
-    <form action ="process.php?ssn=<?php echo $_GET['ssn']?>" method = "post">
+    <form action ="studentProcess.php?ssn=<?php echo $_GET['ssn']?>" method = "post">
     <p>Select Team Size: </p>
     <label class="container">2
       <input type="radio"  name="size" value="2" id = "size2">

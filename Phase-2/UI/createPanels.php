@@ -169,7 +169,7 @@
 
     <div class = "cPanels">
 
-    <form action ="<?php echo "./teacher.php?tid=".$_GET['tid']."&panelid=".$_GET['panelid']?>" method = "post">
+    <form action ="<?php echo "./teacherProcess.php?tid=".$_GET['tid']."&panelid=".$_GET['panelid']?>" method = "post">
          <p>Select Panel Size (Number Of Copanelists):</p>
          <label class="container">2
          <input type="radio" name="size" id="size2" value="2">

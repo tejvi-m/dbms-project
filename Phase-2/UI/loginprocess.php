@@ -17,7 +17,7 @@
     echo $sz;
     if ($sz != 0){
       echo "letting you into teacher";
-      header ("Location: teacher0.php?tid=".$_POST['username']);
+      header ("Location: teacher.php?tid=".$_POST['username']);
     }
     else{
   if(substr($_POST['username'], 0, 3) == "PES"){
@@ -29,7 +29,7 @@
         header ("Location: viewPanels.php?ssn=".$_POST['username']);
       }
       else{
-        header("Location: student1.php?ssn=".$_POST['username']);
+        header("Location: student.php?ssn=".$_POST['username']);
       }
     }
     else{
