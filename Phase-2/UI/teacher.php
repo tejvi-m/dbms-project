@@ -6,8 +6,8 @@
   </head>
   <body>
     <?php
-    $user = "teacher";
-    $pswd = "teacher";
+    $user = "tejvi";
+    $pswd = "tejvi";
 
     $db_connection = pg_connect("host=localhost dbname=register user=".$user." password=".$pswd);
 
@@ -33,7 +33,8 @@
 
     $query = pg_query($db_connection, "COMMIT;");
 
-     header("Location: ./teacher0.php?tid=".$_GET['tid']);
+    echo "added";
+     //header("Location: ./teacher0.php?tid=".$_GET['tid']);
 
     ?>
 

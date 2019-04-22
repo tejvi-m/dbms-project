@@ -73,6 +73,8 @@
       echo "ID:$row[1], Name:$row[0]<br>";
       }
 
+      //create panels, you're not inserting?
+
      ?>
   </div>
   </body>

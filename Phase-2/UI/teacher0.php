@@ -78,11 +78,23 @@
   </style>
 </head>
 <body>
-  <div class = "Teams">
+  <div class = "link to coordinator">
     <?php
     $user = "teacher";
     $pswd = "teacher";
     $db_connection = pg_connect("host=localhost dbname=register user=".$user." password=".$pswd);
+
+
+    $query = pg_fetch_row(pg_query($db_connection, " SELECT COUNT(*) FROM part_of where teacherid = '".$_GET['tid']."' and mem_type = 'Coordinator'; "))[0];
+
+    if($query > 0){
+      echo "link to  <a href= \"coordinator.php\">coordinator page</a>";
+    }
+
+    ?>
+  </div>
+  <div class = "Teams">
+    <?php
 
     $query = pg_query($db_connection, "SELECT * FROM works_on where teacherid='".$_GET['tid']."';");
 
