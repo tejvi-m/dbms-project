@@ -17,11 +17,19 @@ Thejas Bhat - PES1201701421
 
 # Execution
 
-clone the repository: ```$git clone https://github.com/tejvi-m/dbms-project.git```
+clone the repository: 
 
-creating and populating the database: ```$psql username < dbms-project/Phase-2/create.sql```
+```$git clone https://github.com/tejvi-m/dbms-project.git```
+
+creating and populating the database:
+
+```$psql username < dbms-project/Phase-2/create.sql```
 
 ```$psql username < dbms-project/Phase-2/insert.sql```
 
 accessing the UI: copy ```Phase-2/UI``` to the appropriate folder and navigate to ```localhost/UI/login.php``` once you set the the user and password parameters in ```Phase-2/UI/loginprocess.php```
-or run ```$sudo cp -r dbms-project/Phase-2/UI /var/www/html/``` if ```/var/www/html/``` is the document root for apache.
+or run
+
+```$sudo cp -r dbms-project/Phase-2/UI /var/www/html/``` 
+
+if ```/var/www/html/``` is the document root for apache.
