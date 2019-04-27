@@ -23,5 +23,5 @@ creating and populating the database: ```$psql username < dbms-project/Phase-2/c
 
 ```$psql username < dbms-project/Phase-2/insert.sql```
 
-accessing the UI: copy ```Phase-2/UI``` to the appropriate folder and navigate to ```localhost/UI/login.php``` once you set the the user and password parameters in ```Phase-2/UI/login.php```
-or run ```sudo cp -r dbms-project/Phase-2/UI /var/www/html/``` if ```/var/www/html/``` is the document root for apache.
+accessing the UI: copy ```Phase-2/UI``` to the appropriate folder and navigate to ```localhost/UI/login.php``` once you set the the user and password parameters in ```Phase-2/UI/loginprocess.php```
+or run ```$sudo cp -r dbms-project/Phase-2/UI /var/www/html/``` if ```/var/www/html/``` is the document root for apache.
